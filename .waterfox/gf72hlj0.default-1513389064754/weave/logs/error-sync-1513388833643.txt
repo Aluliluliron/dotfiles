@@ -1,0 +1,30 @@
+1513388832746	Sync.Service	DEBUG	User-Agent: Waterfox/55.2.2 (Linux x86_64) FxSync/1.57.0.20171010223320.desktop
+1513388832746	Sync.Service	INFO	Starting sync at 2017-12-16 02:47:12 in browser session 4VpFjf51kBoW
+1513388832747	Sync.SyncScheduler	DEBUG	Clearing sync triggers and the global score.
+1513388832748	Sync.Telemetry	TRACE	observed weave:service:sync:start 
+1513388832751	Sync.Status	INFO	Resetting Status.
+1513388832751	Sync.Status	DEBUG	Status.service: success.status_ok => success.status_ok
+1513388832753	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1513388833413	Sync.AsyncResource	DEBUG	mesg: GET success 200 https://sync-554-us-west-2.sync.services.mozilla.com/1.5/85875031/info/collections
+1513388833414	Sync.AsyncResource	DEBUG	GET success 200 https://sync-554-us-west-2.sync.services.mozilla.com/1.5/85875031/info/collections
+1513388833416	Sync.Service	DEBUG	Fetching server configuration: https://sync-554-us-west-2.sync.services.mozilla.com/1.5/85875031/info/configuration
+1513388833418	Sync.BrowserIDManager	DEBUG	_ensureValidToken already has one
+1513388833624	Sync.AsyncResource	DEBUG	mesg: GET fail 401 https://sync-554-us-west-2.sync.services.mozilla.com/1.5/85875031/info/configuration
+1513388833624	Sync.AsyncResource	DEBUG	GET fail 401 https://sync-554-us-west-2.sync.services.mozilla.com/1.5/85875031/info/configuration
+1513388833624	Sync.AsyncResource	WARN	GET request to https://sync-554-us-west-2.sync.services.mozilla.com/1.5/85875031/info/configuration failed with status 401
+1513388833624	Sync.Service	WARN	info/configuration returned 401 - using default configuration
+1513388833624	Sync.Service	INFO	Logging out
+1513388833625	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms.
+1513388833625	Sync.ErrorHandler	INFO	Got 401 response; resetting clusterURL.
+1513388833625	Sync.ErrorHandler	DEBUG	New mid-sync 401 failure. Making a note.
+1513388833625	Sync.ErrorHandler	INFO	Attempting to schedule another sync.
+1513388833627	Sync.SyncScheduler	DEBUG	Next sync in 600000 ms.
+1513388833627	Sync.ErrorHandler	ERROR	Sync encountered an error: Error: Aborting sync, remote setup failed (resource://services-sync/stages/enginesync.js:87:23) JS Stack trace: sync@enginesync.js:87:23 < onNotify@service.js:1081:7 < WrappedNotify@util.js:160:21 < WrappedLock@util.js:116:16 < _lockedSync@service.js:1071:12 < sync/<@service.js:1063:7 < WrappedCatch@util.js:91:16 < sync@service.js:1052:5
+1513388833629	Sync.Telemetry	TRACE	observed weave:service:sync:error 
+1513388833632	Sync.Service	DEBUG	Exception calling anonymous function: Error: Aborting sync, remote setup failed (resource://services-sync/stages/enginesync.js:87:23) JS Stack trace: sync@enginesync.js:87:23 < onNotify@service.js:1081:7 < WrappedNotify@util.js:160:21 < WrappedLock@util.js:116:16 < _lockedSync@service.js:1071:12 < sync/<@service.js:1063:7 < WrappedCatch@util.js:91:16 < sync@service.js:1052:5
+1513388833641	Sync.ErrorHandler	DEBUG	Addons installed: 5
+1513388833641	Sync.ErrorHandler	DEBUG	 - Stylish, version 2.1.1, id {46551EC9-40F0-4e47-8E18-8E5CF550CFB8}
+1513388833642	Sync.ErrorHandler	DEBUG	 - Vimperator, version 3.16.0, id vimperator@mozdev.org
+1513388833642	Sync.ErrorHandler	DEBUG	 - FireGestures, version 1.11.1, id firegestures@xuldev.org
+1513388833642	Sync.ErrorHandler	DEBUG	 - Hover Zoom+, version 1.0.126, id {1f50c5bd-711d-441f-8cdf-d2043bcce0f9}
+1513388833642	Sync.ErrorHandler	DEBUG	 - uBlock Origin, version 1.14.22, id uBlock0@raymondhill.net
