@@ -1,0 +1,589 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+noir = ${xrdb:*color0}
+rouge = ${xrdb:*color1}
+vert = ${xrdb:*color2}
+jaune = ${xrdb:*color3}
+bleu = ${xrdb:*color4}
+violet = ${xrdb:*color5}
+turquoise = ${xrdb:*color6}
+blanc = ${xrdb:*color7}
+noir_2 = ${xrdb:*color8}
+rouge_2 = ${xrdb:*color9}
+vert_2 = ${xrdb:*color10}
+jaune_2 = ${xrdb:*color11}
+bleu_2 = ${xrdb:*color12}
+violet_2 = ${xrdb:*color13}
+turquoise_2 = ${xrdb:*color14}
+blanc_2 = ${xrdb:*color15}
+background = #F3333333
+foreground = #F3D7D0C7
+
+black = #F3252525
+black_2 = #F3444444
+red = #F3E84F4F
+red_2 = #F3D23D3D
+green = #F3B8D68C
+green_2 = #F3A0CF5D
+yellow = #F3E1AA5D
+yellow_2 = #F3F39D21
+blue = #F37DC1CF
+blue_2 = #F34E9FB1
+magenta = #F39B64FB
+magenta_2 = #F38542FF
+cyan = #F36D878D
+cyan_2 = #F342717B
+white = #F3dddddd
+white_2 = #F3dddddd
+bg = #F3333333
+fg = #F3D7D0C7
+
+[bar/bspwm]
+monitor = HDMI-0
+width = 100%
+height = 18
+top = true
+offset-x = 0
+offset-y = 0
+fixed-center = false
+
+background = ${colors.bg}
+foreground = ${colors.blanc}
+
+border-size = 0
+
+padding-left = 0
+padding-right = 0
+module-margin = 0
+
+font-0 = Tewi:style=Regular:size=12;2
+font-3 = FontAwesome:pixelsize=9;2
+font-2 = Wuncon Siji:style=Regular:size=9;2
+font-1 = Terminusicons2Mono:style=Regular:pixelsize=9;0
+
+modules-left = powermenu bspwm xwindow 
+modules-center =
+modules-right = mpd2 cmus cpu memory volume time date
+
+;dim-value = 0.5
+
+;tray-position = right
+;tray-padding = 0
+;tray-offset-x = 0
+;tray-offset-y = 0
+;tray-transparent = true
+;tray-background = #0063ff
+
+wm-restack = bspwm
+;wm-restack = i3
+
+override-redirect = true
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+[bar/i3]
+monitor = ${env:MONITOR:}
+width = 100%
+height = 20
+top = true
+offset-x = 0
+offset-y = 0
+fixed-center = false
+
+;dim-value = 0.96
+enable-ipc = true
+
+background = ${colors.bg}
+foreground = ${colors.blanc}
+
+padding-left = 0
+padding-right = 0
+module-margin = 0
+
+font-0 = Inconsolata:style=Regular:size=12;2
+font-3 = FontAwesome:pixelsize=9;2
+font-2 = Wuncon Siji:style=Regular:size=9;2
+font-1 = Terminusicons2Mono:style=Regular:pixelsize=9;0
+
+modules-left = archmenu i3 
+modules-center =
+modules-right = mpd2 cmus cpu memory volume time date
+
+tray-position = right
+tray-padding = 1
+tray-offset-x = 0
+tray-offset-y = 0
+tray-detached = false
+tray-scale = 1.0
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+;separator = %{F#4D4D4A}%{F-}
+
+;border-size = 20
+;border-left-size = 0
+;border-right-size = 0
+;border-top-size = 0
+;border-color = #00000000
+
+[bar/spectrwm]
+monitor = HDMI-0
+width = 100%
+height = 18
+top = true
+offset-x = 0
+offset-y = 0
+fixed-center = false
+
+;dim-value = 0.96
+enable-ipc = true
+
+background = ${colors.bg}
+foreground = ${colors.blanc}
+
+padding-left = 0
+padding-right = 0
+module-margin = 0
+
+font-0 = Tewi:style=Regular:size=12;2
+font-3 = FontAwesome:pixelsize=9;2
+font-2 = Wuncon Siji:style=Regular:size=9;2
+font-1 = Terminusicons2Mono:style=Regular:pixelsize=9;0
+
+modules-left = powermenu ewmh xwindow
+modules-center =
+modules-right = mpd2 cmus cpu memory volume time date
+
+;tray-position = right
+;tray-padding = 1
+;tray-offset-x = 0
+;tray-offset-y = 0
+;tray-detached = false
+;tray-scale = 1.0
+
+;override-redirect = true
+
+;wm-restack = bspwm
+
+margin-bottom = 5
+
+[module/ewmh]
+type = internal/xworkspaces
+
+pin-workspaces = true
+enable-click = true
+enable-scroll = true
+
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-5 = 6;
+icon-6 = 7;
+icon-7 = 8;
+icon-8 = 9;
+
+format = <label-state>
+
+label-active = %icon%
+label-active-background = ${colors.magenta_2}
+label-active-foreground = ${colors.white}
+label-active-padding = 1
+
+label-occupied = %icon%
+label-occupied-background = ${colors.magenta_2}
+label-occupied-foreground = ${colors.white}
+label-occupied-padding = 1
+
+label-urgent = %icon%
+label-urgent-background = ${colors.red}
+label-urgent-foreground = ${colors.white}
+label-urgent-padding = 1
+
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground}
+label-empty-background = ${colors.magenta}
+label-empty-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+
+format-prefix = "  "
+format-prefix-background = ${colors.black_2}
+label = " %title:0:70:...% "
+
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+;format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+;label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.background}
+;label-indicator-underline = ${colors.secondary}
+
+[module/bspwm]
+type = internal/bspwm
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+
+format = <label-mode> <label-state>
+
+label-focused = %icon%
+label-focused-background = ${colors.bg}
+label-focused-foreground = ${colors.white}
+label-focused-padding = 1
+
+label-occupied = %icon%
+label-occupied-background = ${colors.magenta_2}
+label-occupied-foreground = ${colors.white}
+label-occupied-padding = 1
+
+label-urgent = %icon%
+label-urgent-background = ${colors.red}
+label-urgent-foreground = ${colors.white}
+label-urgent-padding = 1
+
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground}
+label-empty-background = ${colors.magenta}
+label-empty-padding = 1
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+
+format = <label-state> <label-mode>
+label-mode = %mode%
+label-mode-padding = 1
+
+label-focused = %icon%
+label-focused-padding = 1
+
+label-unfocused = %icon%
+label-unfocused-padding = 1
+
+label-visible = %icon%
+label-visible-padding = 1
+
+label-urgent = %icon%
+label-urgent-padding = 1
+
+label-focused-foreground = ${colors.blanc}
+label-focused-background = ${colors.magenta_2}
+;label-focused-underline= ${colors.vert}
+
+label-visible-foreground = ${colors.foreground}
+label-unfocused-foreground = ${colors.blanc}
+label-unfocused-background = ${colors.magenta}
+
+label-urgent-background = ${colors.red}
+label-urgent-foreground = ${colors.blanc} 
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+
+;ws-icon-0 = 1;Λ
+;ws-icon-1 = 2;Ω
+;ws-icon-2 = 3;Γ
+;ws-icon-3 = 4;Σ
+;ws-icon-4 = 5;Ψ
+;ws-icon-5 = 6;H
+;ws-icon-6 = 7;Δ
+;ws-icon-7 = 8;Θ
+;ws-icon-8 = 9;Π
+;ws-icon-9 = 10;Ξ
+
+[module/cmus]
+type = custom/script
+
+format = <label>
+format-prefix = "  "
+format-prefix-foreground = ${colors.violet}
+format-prefix-background = ${colors.black_2}
+label = " %output% "
+
+exec = sh ~/.config/scripts/cmus/cmus.sh
+exec-if = pgrep -x cmus
+interval = 1
+
+click-left = cmus-remote --pause
+click-right = cmus-remote --stop
+
+[module/mpd2]
+type = custom/script
+
+format = <label>
+format-prefix = "  "
+format-prefix-foreground = ${colors.violet}
+format-prefix-background = ${colors.black_2}
+label = " %output% "
+
+interval = 1
+exec = echo "$(mpc current)" 
+
+click-left = mpc pause
+click-right = mpc play
+
+[module/pkg]
+type = custom/script
+interval = 1200
+format = <label>
+format-underline = ${colors.rouge}
+label = "%output:0:30%"
+exec = .config/polybar/pkg.sh
+exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+[module/redshift]
+type = custom/script
+interval = 50
+exec = ~/.config/polybar/redshift.sh
+
+[module/trash]
+interval = 1
+type = custom/script
+exec = ~/.config/polybar/trash
+format-prefix = " "
+click-right = rm -rf ~/.local/share/Trash/files/* ;exec paplay ~/.sounds/freedesktop/stereo/trash-empty.oga
+click-left = thunar ~/.local/share/Trash/files
+
+[module/mpd]
+type = internal/mpd
+
+format-online = <icon-random> <label-song>
+format-offline =
+format-stopped = ${self.format-online}
+format-playing = ${self.format-online}
+format-paused = ${self.format-online}
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-random = "[mpd]"
+
+label-playing = [test]
+label-song = %artist% - %title%  
+;label-song-maxlen = 25
+label-song-ellipsis = true
+
+toggle-on-foreground = ${colors.cyan}
+toggle-off-foreground = ${colors.violet}
+
+[module/time]
+type = internal/date
+interval = 1.0
+
+time = " %H:%M "
+
+format-prefix = "  "
+format-prefix-foreground = ${colors.blanc}
+format-prefix-background = ${colors.magenta_2}
+
+format-background = ${colors.magenta}
+
+label = %time%
+
+[module/date]
+type = internal/date
+interval = 1.0
+
+date = " %d. %b %y. "
+
+format-prefix = "%{A:~/.config/scripts/PanelBspwm/dcal:}  %{A}"
+format-prefix-background = ${colors.blue_2}
+format-background = ${colors.blue}
+
+label = "%{A:~/.config/scripts/PanelBspwm/dcal:}%date%%{A}"
+
+[module/weather]
+type = custom/script
+interval = 10
+format = <label>
+format-prefix = "[temp] "
+format-prefix-foreground = ${colors.jaune}
+exec = ~/.config/polybar/weather.sh
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume><label-volume>
+
+ramp-volume-0 = "  "
+ramp-volume-1 = "  "
+ramp-volume-2 = "  "
+ramp-volume-3 = "  "
+ramp-volume-4 = "  "
+ramp-volume-5 = "  "
+ramp-volume-6 = "  "
+
+label-volume = " %percentage%% "
+label-volume-background = ${colors.background}
+label-volume-foreground = ${colors.blanc}
+
+ramp-volume-0-foreground = ${colors.foreground}
+ramp-volume-1-foreground = ${colors.vert}
+ramp-volume-2-foreground = ${colors.vert}
+ramp-volume-3-foreground = ${colors.vert}
+ramp-volume-4-foreground = ${colors.vert}
+ramp-volume-5-foreground = ${colors.jaune}
+ramp-volume-6-foreground = ${colors.rouge}
+
+ramp-volume-0-background = ${colors.black_2}
+ramp-volume-1-background = ${colors.black_2}
+ramp-volume-2-background = ${colors.black_2}
+ramp-volume-3-background = ${colors.black_2}
+ramp-volume-4-background = ${colors.black_2}
+ramp-volume-5-background = ${colors.black_2}
+ramp-volume-6-background = ${colors.black_2}
+
+format-muted-foreground = ${colors.rouge}
+format-muted-background = ${colors.black_2}
+label-muted = "  "
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = "  "
+label-open-foreground = ${colors.white}
+label-open-background = ${colors.magenta}
+label-close = [back]
+label-close-foreground = ${colors.white}
+label-separator = |
+label-separator-foreground = ${colors.fg}
+
+menu-0-0 = [reboot]
+menu-0-0-exec = menu-open-1
+menu-0-0-foreground = ${colors.green}
+menu-0-1 = [off]
+menu-0-1-exec = menu-open-2
+menu-0-1-foreground = ${colors.red}
+
+menu-1-0 = [reboot]
+menu-1-0-exec = systemctl reboot
+menu-1-0-foreground = ${colors.green}
+
+menu-2-0 = [off]
+menu-2-0-exec = systemctl poweroff
+menu-2-0-foreground = ${colors.red}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+;label-mounted = ${colors.bleu} %percentage_used%%
+label-mounted = %{F#8BE9FD}[disk]%{F-} %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "  "
+format-prefix-foreground = ${colors.rouge}
+format-prefix-background = ${colors.black_2}
+
+label = " %percentage%% "
+label-background = ${colors.bg}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "  "
+format-prefix-foreground = ${colors.jaune}
+format-prefix-background = ${colors.black_2}
+label = " %mb_used% "
+label-background = ${colors.bg}
+
+[module/eth]
+type = internal/network
+interface = enp4s0
+interval = 3.0
+
+format-connected-prefix-foreground = ${colors.vert}
+label-connected = %{F#FF5555}[up]%{F-} %upspeed% %{F#50FA7B}[down]%{F-} %downspeed%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/archmenu]
+type = custom/text
+content = "  "
+content-background = ${colors.blue}
+content-foreground = ${colors.blanc}
+
+click-left = mygtkmenu ~/Téléchargements/TestMenu.txt
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 24
+margin-bottom = 24
+
+override-redirect = true
+
+; vim:ft=dosini

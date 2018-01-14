@@ -1,0 +1,24 @@
+#!/bin/bash
+
+source "${HOME}/.cache/wal/colors.sh"
+
+# Specifying the icon(s) in the script
+# This allows us to change its appearance conditionally
+icon="[redshift]"
+
+pgrep -x redshift &> /dev/null
+if [[ $? -eq 0 ]]; then
+    temp=$(redshift -p 2>/dev/null | grep temp | cut -d' ' -f3)
+    temp=${temp//K/}
+fi
+
+# OPTIONAL: Append ' ${temp}K' after $icon
+if [[ -z $temp ]]; then
+    echo "%{color0}$icon${temp}"       # Greyed out (not running)
+elif [[ $temp -ge 5500 ]]; then
+    echo "%{color4}$icon"       # Blue
+elif [[ $temp -ge 3500 ]]; then
+    echo "%{color11}$icon"       # Yellow
+else
+    echo "%{color9}$icon"       # Orange
+fi
