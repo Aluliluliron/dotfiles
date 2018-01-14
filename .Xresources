@@ -1,0 +1,106 @@
+#include "/home/v3n1n/.colors/molokaiclear"
+
+!-------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
+ 
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintlight
+Xft.lcdfilter: lcddefault
+ 
+!-------------------------------------------------------------------------------
+! URxvt settings
+! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
+! More info at:
+! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
+!-------------------------------------------------------------------------------
+ 
+URxvt*termName: rxvt-unicode-256color
+
+URxvt*font: xft:Tewi:size=9:antialias=true:hiting=true
+URxvt*boldFont: xft:Tewi:size=9:antialias=true:hiting=true
+
+!URxvt*font: xft:jmk Neep:size=10:antialias=true:hinting=true
+!URxvt*boldFont: xft:jmk Neep:size=10:antialias=true:hinting=true
+
+!URxvt*font: xft:Wucon Siji:size=10:antialias=true:hinting=true
+!URxvt*boldFont: xft:Wucon Siji:size=10:antialias=true:hinting=true
+
+!URxvt*font: xft:Terminus:size=9:antialias=true:hinting=true
+!URxvt*boldFont: xft:Terminus:style=Bold:size=9:antialias=true:hinting=true
+
+!URxvt*font: xft:Gohu GohuFont:size=10:antialias=true:hinting=true
+!URxvt*boldFont: xft:Gohu GohuFont:size=10:antialias=true:hinting=true
+
+!URxvt*font: xft:ypn envypn:size=10:antialias=true:hinting=true
+!URxvt*boldFont: xft:ypn envypn:size=10:antialias=true:hinting=true
+
+URxvt.iso14755: False
+URxvt*cursorBlink: True
+URxvt*scrollBar: False
+
+URxvt.internalBorder: 5
+
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.keysym.M-slash: perl:aAtt:complete
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.matcher.button: 1
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
+
+!URxvt*depth: 32
+!URxvt*background: [90]#282A36
+
+! Ctrl Up and Down control font size
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+! copy paste
+URxvt.keysym.Shift-Control-V:   perl:clipboard:paste
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+
+!URxvt.perl-ext-common: ...,tabbed,...
+
+!-------------------------------------------------------------------------------
+!
+! Xterm config
+!
+!-------------------------------------------------------------------------------
+
+XTerm*termName: xterm-256color
+Xterm*title: xterm-256color
+
+XTerm*locale: true
+XTerm.vt100.locale: true
+
+XTerm*metaSendsEscape: true
+Xterm*saveLines: 4096
+
+XTerm*renderFont: true
+xterm*faceName: Tewi:antilias=true
+XTerm*faceSize: 9
+
+xterm*internalBorder: 5
+xterm*borderWidth: 0
+
+XTerm*allowBoldFonts: false
+
+XTerm*utf8Title: true
+xterm*utf8: 1
+
+xterm*VT100.Translations: #override \
+                 Ctrl Alt <Key>V:    insert-selection(CLIPBOARD) \n\
+                 Ctrl Alt <Key>C:    copy-selection(CLIPBOARD)
+
+!-------------------------------------------------------------------------------
+! dzen2 settings
+!-------------------------------------------------------------------------------
+
+dzen2.font: -*-terminus-regular-*-*-*-10-*-*-*-*-*-*-*
+dzen2.foreground: #F8F8F2
+dzen2.background: #333333
