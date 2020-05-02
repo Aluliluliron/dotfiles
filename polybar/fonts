@@ -1,0 +1,9 @@
+font-6 = Zpix:style=Regular:size=10;2
+font-5 = lemon Nerd Font:style=Regular:size=8;2
+font-4 = Weather Icons:style=Regular:size=10;3
+font-3 = Powerline Extra Symbols:style=Medium:size=15.4;3
+font-2 = Terminusicons2Mono:style=Regular:pixelsize=11;0
+font-1 = Siji:style=Regular:size=9;3
+font-0 = lemon Nerd Font:style=Regular:size=12;2
+
+; vim: ft=dosini

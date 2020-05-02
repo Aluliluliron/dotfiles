@@ -1,0 +1,298 @@
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[global/wm]
+include-file = ~/.config/polybar/colors
+margin-top = 24
+margin-bottom = 24
+
+[bar/i3]
+include-file = ~/.config/polybar/fonts
+
+monitor = ${env:MONITOR:}
+width = 100%
+height = 25
+top = true
+offset-x = 0
+offset-y = 0
+fixed-center = false
+border-left-size = 17
+border-top-size = 7
+border-right-size= 17
+
+enable-ipc = true
+
+background = ${colors.background1}
+foreground = ${colors.white1}
+
+padding-left  = 0
+padding-right = 0
+module-margin = 0
+
+modules-left = archmenu i3 sepright
+modules-center = mpd-icon mpd-song mpd-ctrl
+modules-right = volume cpu memory wlan weather battery time date keyboard
+
+tray-position = left
+tray-padding = 1
+tray-offset-x = 0
+tray-offset-y = 0
+tray-detached = true
+tray-scale = 1.0
+
+wm-restack = i3
+override-redirect = false
+
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+
+[module/sepright]
+type = custom/text
+content = "%{T4}%{T-}"
+content-foreground = ${colors.purple}
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+
+battery = BAT0
+adapter = AC
+
+poll-interval = 5
+
+format-charging = <animation-charging><label-charging>
+format-discharging = <ramp-capacity><label-discharging>
+format-full = <ramp-capacity><label-full>
+
+format-charging-background = ${colors.green}
+format-discharging-background = ${colors.green}
+format-full-background = ${colors.green}
+
+label-charging = "%percentage:2%% %{T4}%{B#EE66cccc}%{F#EE99cc99}%{T- B- F-}"
+format-charging-foreground = ${colors.background1}
+
+label-full = "%{F#E52d2d2d}%percentage:3%% %{T4}%{B#EE66cccc}%{F#EE99cc99}%{T- B- F-}"
+label-full-foreground = ${colors.background1}
+
+label-discharging = "%percentage:2%% %{T4}%{B#EE66cccc}%{F#EE99cc99}%{T- B- F-}"
+label-discharging-foreground = ${colors.background1}
+
+ramp-capacity-0 = "  "
+ramp-capacity-1 = "  "
+ramp-capacity-2 = "  "
+ramp-capacity-3 = "  "
+
+ramp-capacity-0-foreground = ${colors.red} 
+ramp-capacity-1-foreground = ${colors.background1} 
+ramp-capacity-2-foreground = ${colors.background1} 
+ramp-capacity-3-foreground = ${colors.background1} 
+
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
+animation-charging.foreground = ${colors.background1}
+animation-charging-framerate = 750
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+
+format = <label-state> <label-mode>
+format-background = ${colors.purple}
+format-underline = ${colors.cyan}
+label-mode = %mode%
+label-mode-padding = 1
+label-mode-foreground = ${colors.background1}
+
+label-focused = %icon%
+label-focused-padding = 1
+
+label-unfocused = %icon%
+label-unfocused-padding = 1
+
+label-visible = %icon%
+label-visible-padding = 1
+
+label-urgent = %icon%
+label-urgent-padding = 1
+
+label-focused-foreground = ${colors.white1}
+
+label-visible-foreground = ${colors.background1}
+label-unfocused-foreground = ${colors.background1}
+
+label-urgent-foreground = ${colors.red} 
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+
+[module/mpd-icon]
+type = internal/mpd
+
+format-online = <icon-random>
+format-offline =
+format-stopped = ${self.format-online}
+format-playing = ${self.format-online}
+format-paused = ${self.format-online}
+
+icon-random = " %{T3} %{T-} "
+
+toggle-on-foreground = ${colors.red}
+toggle-off-foreground = ${colors.purple}
+
+[module/mpd-song]
+type = custom/script
+exec = ~/.config/polybar/scroll.sh
+tail = true
+interval = 0
+click-left = termite -e ncmpcpp
+
+[module/mpd-ctrl]
+type = internal/mpd
+
+format-online = <icon-prev> <toggle> <icon-next> 
+format-stopped = ${self.format-online}
+format-playing = ${self.format-online}
+format-paused = ${self.format-online}
+
+icon-prev = "  "
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = "   "
+icon-random = "  "
+
+toggle-on-foreground = ${colors.red}
+toggle-off-foreground = ${colors.purple}
+
+[module/time]
+type = internal/date
+interval = 1.0
+
+time = " %{A:termite -e khal\ interactive:} %H:%M%{A}"
+
+format-background = ${colors.cyan}
+format-foreground = ${colors.background1}
+
+label = %time%
+
+[module/date]
+type = internal/date
+interval = 1.0
+
+date = "%{A:termite -e khal\ interactive:} %{T3}%{T-} %d.%m.%y.%{A} %{T4}%{B#E52d2d2d}%{F#EE69cccc}%{B- F- T-}"
+format-background = ${colors.cyan}
+format-foreground = ${colors.background1}
+
+[module/weather]
+type = custom/script
+interval = 10
+format = <label>
+exec = ~/.config/polybar/weather.sh -3
+format-background = ${colors.yellow}
+format-foreground = ${colors.background1}
+
+[module/volume]
+type = internal/pulseaudio
+
+format-volume = <ramp-volume><label-volume>
+
+ramp-volume-0 = "%{T4}%{B#E52d2d2d}%{F#EEf2777a}%{B- F- T-}%{B#EEf2777a}%{F#E52d2d2d}  %{B- F-}"
+
+label-volume = "%percentage:3%% %{T4}%{B#EEd27b53}%{F#EEf2777a}%{B- F- T-}"
+label-volume-background = ${colors.red}
+label-volume-foreground = ${colors.background1}
+
+format-muted-foreground = ${colors.red}
+format-muted-background = ${colors.white1}
+label-muted = "%{T4}%{B#E52d2d2d}%{F#EEd3d0c8}%{B- F- T-}%{B#d3d0c8}%{F#E52d2d2d}  MUTE %{B- F-}%{T4}%{B#EEd27b53}%{F#d3d0c8}%{B- F- T-}"
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "%{A:termite -e htop:}  %{A}"
+format-prefix-foreground = ${colors.background1}
+format-prefix-background = ${colors.brown}
+
+label = "%{A:termite -e htop:}%percentage:2%% %{A}"
+label-background = ${colors.brown}
+label-foreground = ${colors.background1}
+
+[module/memory]
+type = internal/memory
+interval = 2
+label = "%{A:termite -e htop:}%mb_used:7% %{A}"
+format-prefix = "%{A:termite -e htop:} %{A}"
+format-prefix-background =${colors.brown}
+format-prefix-foreground =${colors.background1}
+label-background =${colors.brown}
+label-foreground =${colors.background1}
+
+[module/wlan]
+type = internal/network
+interface = wlo1
+interval = 3.0
+
+format-connected-prefix = "%{T4}%{B#EE99cc99}%{F#EEd27b53}%{B- F- T-}%{T3}%{B#EE99cc99}%{F#E52d2d2d}  %{T- B- F-} "
+format-connected-prefix-background =${colors.green}
+format-connected-prefix-foreground = ${colors.background1}
+label-connected = "%{A:cmst:}%essid% %{A}%{T4}%{B#EEffcc66}%{F#EE99cc99}%{B- F- T-}"
+label-connected-background =${colors.green}
+label-connected-foreground = ${colors.background1}
+
+format-disconnected-prefix = "%{T4}%{B#EEf2777a}%{F#EEd27b53}%{B- F- T-}%{T3}%{B#EEf2777a}%{F#E52d2d2d}  %{T- B- F-} "
+format-disconnected-prefix-background = ${colors.red}
+format-disconnected-prefix-foreground = ${colors.background1}
+format-disconnected = <label-disconnected>
+format-disconnected-background = ${colors.red}
+format-disconnected-foreground = ${colors.background1}
+label-disconnected = "%{A:cmst:}disconnected %{A}%{T4}%{B#EEffcc66}%{F#EEf2777a}%{B- F- T-}"
+
+[module/archmenu]
+type = custom/text
+content = "%{A:rofi -show drun:}  %{A}%{T4}%{B#EEcc99cc}%{F#EE99cc99}%{T- B- F-}"
+content-background = ${colors.green}
+content-foreground = ${colors.background1}
+
+[module/keyboard]
+type = internal/xkeyboard
+format = <label-layout>
+format-spacing = 0
+
+label-layout = %icon%
+label-layout-padding = 1
+
+layout-icon-default = 
+layout-icon-0 = us;us
+layout-icon-1 = rs;pc
+layout-icon-2 = hr;rs
+layout-icon-3 = jp;%{T6}あ%{T-}
+
+[settings]
+screenchange-reload = true
+
+; vim:ft=dosini

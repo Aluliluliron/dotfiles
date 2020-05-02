@@ -1,0 +1,37 @@
+[colors]
+
+; background1 = ${env:POLY_BG1}
+; background2 = ${env:POLY_BG2}
+; grey1       = ${env:POLY_GREY1}
+; grey2       = ${env:POLY_GREY2}
+; silver1     = ${env:POLY_SIL1}
+; silver2     = ${env:POLY_SIL2}
+; white1      = ${env:POLY_WHITE1}
+; white2      = ${env:POLY_WHITE2}
+; red         = ${env:POLY_RED}
+; orange      = ${env:POLY_ORANGE}
+; yellow      = ${env:POLY_YELLOW}
+; green       = ${env:POLY_GREEN}
+; cyan        = ${env:POLY_CYAN}
+; blue        = ${env:POLY_BLUE}
+; purple      = ${env:POLY_PURPLE}
+; brown       = ${env:POLY_BROWN}
+
+background1 = #E52d2d2d
+background2 = #E5393939
+grey1       = #EE515151
+grey2       = #EE747369
+silver1     = #EEa09f93
+silver2     = #EEd3d0c8
+white1      = #EEe8e6df
+white2      = #EEf2f0ec
+red         = #EEf2777a
+orange      = #EEf99157
+yellow      = #EEffcc66
+green       = #EE99cc99
+cyan        = #EE66cccc
+blue        = #EE6699cc
+purple      = #EEcc99cc
+brown       = #EEd27b53
+
+; vim:ft=dosini
