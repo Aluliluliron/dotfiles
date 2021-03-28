@@ -1,1 +1,1 @@
-/home/ace/.dotfiles/nvim/init.vim
+C:/home/ace/.dotfiles/nvim/init.vim
