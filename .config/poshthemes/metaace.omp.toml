@@ -1,0 +1,224 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+console_title = true
+console_title_style = "template"
+console_title_template = "{{ .Shell }} in {{ .Folder }}"
+final_space = true
+
+[[blocks]]
+  alignment = "left"
+  type = "prompt"
+
+  [[blocks.segments]]
+    background = "#FA946E"
+    foreground = "#373E4D"
+    style = "powerline"
+    powerline_symbol= ""
+    type = "os"
+    [blocks.segments.properties]
+      wsl = ""
+      wsl_separator = ""
+
+  [[blocks.segments]]
+    background = "#CF8EF4"
+    foreground = "#373E4D"
+    style = "powerline"
+    powerline_symbol = ""
+    type = "session"
+    [blocks.segments.properties]
+      display_host= false
+      postfix = " "
+
+  [[blocks.segments]]
+    background = "#FA74B2"
+    foreground = "#373E4D"
+    powerline_symbol = ""
+    style = "powerline"
+    type = "path"
+    [blocks.segments.properties]
+      folder_separator_icon = "  "
+      home_icon = "~"
+      prefix = "   "
+      style = "folder"
+
+  [[blocks.segments]]
+    background = "#2BE491"
+    foreground = "#373E4D"
+    powerline_symbol = ""
+    style = "powerline"
+    type = "git"
+    [blocks.segments.properties]
+      branch_icon = " "
+      ahead_and_behind_color = "#FA946E"
+      ahead_color = "#89CCF7"
+      behind_color = "#FAA687"
+      display_stash_count = true
+      display_upstream_icon = true
+      local_changes_color = "#FA946E"
+      stash_count_icon = " "
+      status_colors_enabled = true
+
+  #[[blocks.segments]]
+  #  background = "#193549"
+  #  foreground = "#ffffff"
+  #  powerline_symbol = ""
+  #  style = "powerline"
+  #  type = "poshgit"
+
+  [[blocks.segments]]
+    background = "#44EB9F"
+    foreground = "#373E4D"
+    powerline_symbol = ""
+    style = "powerline"
+    type = "node"
+    [blocks.segments.properties]
+      display_version = true
+      prefix = "  "
+
+  [[blocks.segments]]
+    background = "#8ED1F7"
+    foreground = "#111111"
+    powerline_symbol = ""
+    style = "powerline"
+    type = "go"
+    [blocks.segments.properties]
+      display_version = true
+      prefix = "  "
+
+  [[blocks.segments]]
+    background = "#4063D8"
+    foreground = "#111111"
+    powerline_symbol = ""
+    style = "powerline"
+    type = "julia"
+    [blocks.segments.properties]
+      display_version = true
+      prefix = "  "
+
+  [[blocks.segments]]
+    background = "#FFDE57"
+    foreground = "#111111"
+    powerline_symbol = ""
+    style = "powerline"
+    type = "python"
+    [blocks.segments.properties]
+      display_mode = "files"
+      display_version = true
+      display_virtual_env = false
+      prefix = "  "
+
+  [[blocks.segments]]
+    background = "#AE1401"
+    foreground = "#ffffff"
+    powerline_symbol = ""
+    style = "powerline"
+    type = "ruby"
+    [blocks.segments.properties]
+      display_mode = "files"
+      display_version = true
+      prefix = "  "
+
+  [[blocks.segments]]
+    background = "#FEAC19"
+    foreground = "#ffffff"
+    powerline_symbol = ""
+    style = "powerline"
+    type = "azfunc"
+    [blocks.segments.properties]
+      display_mode = "files"
+      display_version = false
+      prefix = " "
+
+  [[blocks.segments]]
+    background_templates = ["{{if contains \"default\" .Profile}}#FFA400{{end}}", "{{if contains \"jan\" .Profile}}#f1184c{{end}}"]
+    foreground = "#ffffff"
+    powerline_symbol = ""
+    style = "powerline"
+    type = "aws"
+    [blocks.segments.properties]
+      display_default = false
+      prefix = "  "
+
+  [[blocks.segments]]
+    background = "#ffff66"
+    foreground = "#111111"
+    powerline_symbol = ""
+    style = "powerline"
+    type = "root"
+    [blocks.segments.properties]
+      root_icon = ""
+
+  #[[blocks.segments]]
+  #  background = "#83769c"
+  #  foreground = "#ffffff"
+  #  leading_diamond = ""
+  #  style = "plain"
+  #  trailing_diamond = ""
+  #  type = "executiontime"
+  #  [blocks.segments.properties]
+  #    always_enabled = true
+  #    prefix = "<transparent></> 羽"
+
+  [[blocks.segments]]
+    background = "#2e9599"
+    foreground = "#ffffff"
+    style = "powerline"
+    powerline_symbol = ""
+    type = "exit"
+    [blocks.segments.properties]
+      always_enabled = false
+      color_background = true
+      display_exit_code = false
+      error_color = "#f1184c"
+      prefix = "  "
+
+[[blocks]]
+  type = "rprompt"
+
+  [[blocks.segments]]
+    background = "#0077c2"
+    foreground = "#ffffff"
+    invert_powerline = true
+    style = "powerline"
+    type = "shell"
+    powerline_symbol = ""
+    [blocks.segments.properties]
+      prefix = "  "
+
+  [[blocks.segments]]
+    background = "#1BD760"
+    foreground = "#111111"
+    invert_powerline = true
+    powerline_symbol = ""
+    style = "powerline"
+    type = "ytm"
+    [blocks.segments.properties]
+      paused_icon = " "
+      playing_icon = " "
+      prefix = "  "
+
+  [[blocks.segments]]
+    background = "#f36943"
+    foreground = "#ffffff"
+    invert_powerline = true
+    powerline_symbol = ""
+    style = "powerline"
+    type = "battery"
+    [blocks.segments.properties]
+      battery_icon = ""
+      charged_color = "#4caf50"
+      charged_icon = " "
+      charging_color = "#40c4ff"
+      charging_icon = " "
+      color_background = true
+      discharging_color = "#ff5722"
+      discharging_icon = " "
+      postfix = " "
+
+  [[blocks.segments]]
+    background = "#2e9599"
+    foreground = "#111111"
+    powerline_symbol = ""
+    style = "powerline"
+    type = "time"
+

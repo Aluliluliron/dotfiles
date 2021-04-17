@@ -1,0 +1,32 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR __fish_initialized:3100
+SETUVAR fish_color_autosuggestion:\x237382A1
+SETUVAR fish_color_cancel:\x23373E4D\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3d\x23FA5AA4
+SETUVAR fish_color_command:\x23CF8EF4
+SETUVAR fish_color_comment:\x237382A1
+SETUVAR fish_color_cwd:\x232BE491
+SETUVAR fish_color_cwd_root:\x23FA5AA4
+SETUVAR fish_color_end:\x237ACBEA
+SETUVAR fish_color_error:\x23FA5AA4
+SETUVAR fish_color_escape:\x2363C5EA
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:\x2363C5EA
+SETUVAR fish_color_param:\x23A1D5F7
+SETUVAR fish_color_quote:\x2344EB9F
+SETUVAR fish_color_redirection:\x23D8A6F4
+SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_selection:\x23F4F4F4\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3d\x23434C5E
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:\x232BE491
+SETUVAR fish_color_valid_path:normal
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:\x23A1D5F7
+SETUVAR fish_pager_color_description:\x23FAA687\x1eyellow
+SETUVAR fish_pager_color_prefix:\x2344EB9F\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:\x23373E4D\x1e\x2d\x2dbackground\x3d\x23D8A6F4
+SETUVAR fish_user_paths:/home/ace/\x2efzf/bin
