@@ -10,7 +10,7 @@ final_space = true
   type = "prompt"
 
   [[blocks.segments]]
-    background = "#FA946E"
+    background = "#63C5EA"
     foreground = "#373E4D"
     style = "powerline"
     powerline_symbol= ""
@@ -176,8 +176,8 @@ final_space = true
   type = "rprompt"
 
   [[blocks.segments]]
-    background = "#0077c2"
-    foreground = "#ffffff"
+    background = "#A1D5F7"
+    foreground = "#373E4D"
     invert_powerline = true
     style = "powerline"
     type = "shell"
@@ -185,39 +185,39 @@ final_space = true
     [blocks.segments.properties]
       prefix = "  "
 
-  [[blocks.segments]]
-    background = "#1BD760"
-    foreground = "#111111"
-    invert_powerline = true
-    powerline_symbol = ""
-    style = "powerline"
-    type = "ytm"
-    [blocks.segments.properties]
-      paused_icon = " "
-      playing_icon = " "
-      prefix = "  "
+  #[[blocks.segments]]
+  #  background = "#1BD760"
+  #  foreground = "#111111"
+  #  invert_powerline = true
+  #  powerline_symbol = ""
+  #  style = "powerline"
+  #  type = "ytm"
+  #  [blocks.segments.properties]
+  #    paused_icon = " "
+  #    playing_icon = " "
+  #    prefix = "  "
+
+  #[[blocks.segments]]
+  #  background = "#f36943"
+  #  foreground = "#ffffff"
+  #  invert_powerline = true
+  #  powerline_symbol = ""
+  #  style = "powerline"
+  #  type = "battery"
+  #  [blocks.segments.properties]
+  #    battery_icon = ""
+  #    charged_color = "#4caf50"
+  #    charged_icon = " "
+  #    charging_color = "#40c4ff"
+  #    charging_icon = " "
+  #    color_background = true
+  #    discharging_color = "#ff5722"
+  #    discharging_icon = " "
+  #    postfix = " "
 
   [[blocks.segments]]
-    background = "#f36943"
-    foreground = "#ffffff"
-    invert_powerline = true
-    powerline_symbol = ""
-    style = "powerline"
-    type = "battery"
-    [blocks.segments.properties]
-      battery_icon = ""
-      charged_color = "#4caf50"
-      charged_icon = " "
-      charging_color = "#40c4ff"
-      charging_icon = " "
-      color_background = true
-      discharging_color = "#ff5722"
-      discharging_icon = " "
-      postfix = " "
-
-  [[blocks.segments]]
-    background = "#2e9599"
-    foreground = "#111111"
+    background = "#FAA687"
+    foreground = "#373E4D"
     powerline_symbol = ""
     style = "powerline"
     type = "time"
